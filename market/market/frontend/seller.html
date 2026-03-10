@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Seller Dashboard</h1>
+        <div class="links">
+            <span id="userNameDisplay"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="dashboard-card">
+            <h2>Add New Product</h2>
+            <form id="addProductForm" class="d-flex gap-2 align-center mt-4">
+                <input type="text" id="prodName" class="form-control" placeholder="Product Name" required>
+                <input type="number" id="prodPrice" class="form-control" placeholder="Price" step="0.01" required>
+                <input type="text" id="prodImage" class="form-control" placeholder="Image URL or Emoji (e.g. 🍎)">
+                <button type="submit" class="btn-primary" style="margin-top:0; width:auto; padding:0.75rem 2rem;">Add</button>
+            </form>
+        </div>
+
+        <h2>Manage Products</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                <!-- Products will be injected here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="seller.js"></script>
+</body>
+</html>
